@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#262626;
+}
+header{
+    background-color:#262626;
+    
+}
+.nosotros{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nosotros p{
+    text-align: center;
+}
+.carrusel h2{
+    color:  #262626;
+    font-size:45px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:#ffffff;
+
+    }
+.carrusel p{
+    color:#262626;
+    font-size:25px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:beige
+    }
+.row h5{
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 20px;
+}
+.card-body{
+    background-color:#262626;
+    color: #9a8a78;  
+}
+.btn{
+    background-color:#aea293;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    color:black
+    
+}
+.btn:hover{
+    background-color:#72695f;
+    color:whitesmoke
+    
+}
+.btn-nav{
+    margin: 5px 0 5px 0;
+}
+.servicios img{
+    width: 100px;
+    height: 100px;
+    padding-right: 15px;
+}
+.servicios h2{
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    color:#fff;
+}
+.servicios h4, p{
+      color:#fff;
+}
+.card-body-1 h5{
+    color: #fff;
+}
+.servicios h4{
+    text-align: center;
+}
+.dropdown-menu{
+    font-size: small;
+}
+.catalogo{
+    color:  #9a8a78;
+    text-align: center;
+}
+.catalogo h5{
+    padding: 15px;
+}
+.catalogo img{
+    width: 350px;
+    height: 200px;
+    border-radius: 5%;
+    padding: 5px;
+}
+.contacto{
+      color:#fff;
+}
+.contacto h2{
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    color:#fff;
+}
+.inicio{
+   color:#fff;
+}
+.footer{
+    color: #9a8a78;  
+    text-align: center;
+    background-color: #131212;
+    border-radius: 2rem;
+    line-height: 35px;
+}
+.tornilleria, .herramientas, .materiales, .aseosria, .diseños, .catalogo, .numero, .correo {
+    color: #9a8a78;  
+    text-align: center;
+    font-size: 20px;
+}
+.formulario{
+    color:#9a8a78;
+}
+.card{
+    color:#9a8a78;  
+}
+.description{
+    height: 25px;
+    overflow: hidden;
+    transition: height .3s ease-in .3s;
+}
+.description:hover{
+    height: 80px;
+}
+#pills-home-tab,#pills-profile-tab,#pills-contact-tab{
+    background-color:#aea293;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+    color:black 
+}

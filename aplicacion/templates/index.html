@@ -1,0 +1,422 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <title>Ferreteria</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark mx-5">
+          <img src="{% static "img/Designer.jpeg" %}" alt="logo" width="50px" height="40px" />
+          <a class="navbar-brand pe-5" href="#">FERRETERIA INDUSTRIAL WS</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-3 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="Inicio.html"
+                  >INICIO</a
+                >
+                <!-- pendiente de cambiar el href -->
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">SERVICIOS</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link active dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >PRODUCTOS</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">TORNILLERIA</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/produtos.html"
+                      >HERRAMIENTAS DE CONSTRUCCIÓN</a
+                    >
+                  </li>
+
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >MATERIALES DE CONSTRUCCIÓN</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link active" href="#">CONTACTO</a>
+              </li>
+            </ul>
+            <div class="justify-content-md-end">
+              <a class="btn btn-nav" href="inicio.html" role="button"
+                >INICIAR SESIÓN</a
+              >
+              <a class="btn btn-nav" href="#" role="button">REGISTRARSE</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section class="carrusel mt-2 fw-bolder">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner fw-bolder">
+          <div class="carousel-item active">
+            <img
+              src="{% static "img/" %}"
+              class="d-block w-100"
+              alt="prueba"
+              height="600"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>ENCUENTRA EL DEPÓSITO MÁS GRANDE.</h2>
+              <p>
+                Con suministros necesario para tu obra,desde las más grandes
+                herramientas hasta los tornillos mas pequeños
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item fw-bolder">
+            <img
+              src="{% static "img/prueba2.jpg" %}"
+              class="d-block w-100"
+              alt="..."
+              height="600"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>ATRÉVETE A SOÑAR EN GRANDE.</h2>
+              <p>
+                Con cada uno de los innovadores materiales que traemos de facil
+                uso para que lo hagas tu mismo
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item fw-bolder">
+            <img
+              src="{% static "img/hombre-utilizando-fresadora-de-mano.jpg" %}"
+              class="d-block w-100"
+              alt="..."
+              height="600"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h2>HAZ REALIDAD TODO LO QUE IMAGINAS.</h2>
+              <p>
+                Con nuestro diseños proporcionados por los más creativos,audaces
+                y talentosos artistas podrás renovar tu hogar, oficina, negocio
+                o el lugar que desees
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <section class="nosotros mt-3 text-white text-center">
+      <h2 class="fw-bold fs-1 text-center">LAS MEJORES HERRAMIENTAS</h2>
+      <div class="container pt-3">
+        <div class="row">
+          <div class="col-sm-4 mb-4 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">CALIDAD</h5>
+                <p class="card-text">
+                  Contamos con las mejores herramientas para las diferentes
+                  actividades que impliquen mejorar las condiciones del lugar.
+                </p>
+                <a href="#" class="btn btn-1">Conoce más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-4 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">PRECIO</h5>
+                <p class="card-text">
+                  Si buscas economía en los artículos que necesites a la hora de
+                  crear o remodelar, este es el mejor lugar para buscar.
+                </p>
+                <a href="#" class="btn btn-2">Conoce más</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-4 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">PRACTICIDAD</h5>
+                <p class="card-text">
+                  encuentra las herramientas experimentadas y fáciles de usar en
+                  las diferentes situaciones para mejorar tu entorno.
+                </p>
+                <a href="#" class="btn btn-3">Conoce más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--           
+        <div class="container pt-3">
+           <a href="#" class="btn btn-4">DESCUBRELO</a>
+          </div>
+          -->
+    </section>
+    <section class="servicios mt-3 text-start">
+      <div class="container pt-3">
+        <h2 class="fw-bold fs-1 text-center">
+          TENEMOS LOS MEJORES SERVICIOS A TU ALCANCE
+        </h2>
+        <div class="row">
+          <div class="class col-md-3">
+            <img
+              src="{% static "img/el-tiempo-de-entrega.png" %}"
+              class="rounded mx-auto d-block my-3"
+              alt="asesoria"
+            />
+            <h4>Envíos</h4>
+            <p>
+              Seguros. Hacemos envíos a todo el país, con el fin de apoyarte en
+              tus actividades.
+            </p>
+          </div>
+          <div class="class col-md-3">
+            <img
+              src="/{% static "img/consulta.png" %}"
+              class="rounded mx-auto d-block my-3"
+              alt="asesoria"
+            />
+            <h4>Asesores de alta calidad</h4>
+            <p>
+              Seguros. Hacemos envíos a todo el país, con el fin de apoyarte en
+              tus actividades.
+            </p>
+          </div>
+          <div class="class col-md-3">
+            <img
+              src="{% static "img/trabajadores.png" %}"
+              class="rounded mx-auto d-block my-3"
+              alt="asesoria"
+            />
+            <h4>Personal capacitado</h4>
+            <p>
+              Si necesitas ayuda a la hora de construir tus sueños, nuestro
+              equipo de arquitectos, maestros y diseñadores de interiores lo
+              hará realidad.
+            </p>
+          </div>
+          <div class="class col-md-3">
+            <img
+              src="{% static "img/servicio-al-cliente.png" %}"
+              class="rounded mx-auto d-block my-3"
+              alt="asesoria"
+            />
+            <h4>Atención personalizada</h4>
+            <p>
+              Te ofrecemos una atención totalmente personal para solucionar
+              cualquier duda o consulta.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container catalogo mt-3">
+      <div class="row">
+        <div class="col-lg-4">
+          <img
+            src="{% static "img/tornilleria.jpg" %}"
+            class="card-img-top"
+            alt="tornilleria"
+          />
+          <h5 class="card-title">TORNILLERIA</h5>
+        </div>
+        <div class="col-lg-4">
+          <img
+            src="{% static "img/herramientas_de_construcción.jpg" %}"
+            class="card-img-top"
+            alt="herramientas"
+          />
+          <h5 class="card-title">HERRAMIENTAS DE CONSTRUCCIÓN</h5>
+        </div>
+        <div class="col-lg-4">
+          <img
+            src="{% static "img/materiales_de_construcción.jpg" %}"
+            class="card-img-top"
+            alt="..."
+          />
+          <h5 class="card-title">MATERIALES DE CONSTRUCCIÓN</h5>
+        </div>
+      </div>
+    </section>
+    <section class="container contacto">
+      <h2>TE CONTACTAREMOS</h2>
+      <form action="">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">NOMBRE</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Andres "
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="apellido" class="form-label">APELLIDO</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellido"
+              placeholder="Ruiz Salazar"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">CORREO</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Ingresa tu Email"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="number" class="form-label">NUMERO</label>
+            <input
+              type="number"
+              class="form-control"
+              id="number"
+              placeholder="+ 57 313290587"
+            />
+          </div>
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Terminos y Condiciones</label
+            >
+          </div>
+          <div class="col-6">
+            <button type="submit" class="btn">CONTACTAME</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <section class="foot mb-5">
+      <div class="container footer">
+        <div class="row mt-3 pt-3">
+          <div class="col-xs-12 col-md-4">
+            <p class="h5">PRODUCTOS</p>
+            <div class="mb-2">
+              <a class="tornilleria text-decoration-none" href="#"
+                >TORNILLERIA</a
+              >
+            </div>
+            <div class="mb-2">
+              <a class="herramientas text-decoration-none" href="#"
+                >HERRAMIENTAS</a
+              >
+            </div>
+            <div class="mb-2">
+              <a class="materiales text-decoration-none" href="#"
+                >MATERIALES DE CONSTRUCCIÓN</a
+              >
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <p class="h3">SERVICIOS</p>
+            <div class="mb-2">
+              <a class="aseosria text-decoration-none" href="#">ASESORIA</a>
+            </div>
+            <div class="mb-2">
+              <a class="diseños text-decoration-none" href="#">DISEÑOS</a>
+            </div>
+            <div class="mb-2">
+              <a class="catalogo text-decoration-none" href="#">CATALOGO</a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <p class="h3">CONTACTANOS</p>
+            <div class="mb-2">
+              <p class="numero">+57 3135402587</p>
+            </div>
+            <div class="mb-2">
+              <p class="correo">ferrewSm@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% comment %} <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script> {% endcomment %}
+    <!-- recordar modificar el script y varios direcciones de enlaces -->
+  </body>
+</html>

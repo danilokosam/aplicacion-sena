@@ -1,0 +1,12 @@
+<!-- recordar agregar contenido de pagina y base -->
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+ {% load crispy_forms_tags %}
+
+<form action="" method="post">
+  {% csrf_token %} 
+  {{form|crispy}}
+  <input type="submit" value="Agregar" />
+</form>
+
