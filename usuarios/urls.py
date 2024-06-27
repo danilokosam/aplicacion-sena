@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+
+from aplicacion.views import index_admin
+from usuarios.views import *
 
 urlpatterns = [
-    path('agregar/',views.agregarUsuario, name="usuario-agregar"),
+    path("usuarios/", usuario_list_view, name="usuarios-listar"),
+    path("usuarios/<int:id>/", usuario_list_view, name="usuarios-editar"),
+    path("usuarios/eliminar/<int:id>/", usuario_delete_view, name="usuario-eliminar"),
 ]

@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'crispy_forms', # pip install django-crispy-forms
     'django_bootstrap_icons',# pip install django-bootstrap-icons
     'crispy_bootstrap5', # pip install crispy-bootstrap5
-    'bootstrap5',
+    'rest_framework',# pip install djangorestframework
+    'bootstrap5'
+    # pip install Pillow
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS= "bootstrap5"
 CRISPY_TEMPLATE_PACK= "bootstrap5"
@@ -110,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -125,8 +127,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'aplicacion/static'),
+   os.path.join(BASE_DIR, 'aplicacion/static'), # Probar cambbiar a solo "static"
 ]
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR,"media/")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
