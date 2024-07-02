@@ -22,14 +22,13 @@ from . import views
 
 urlpatterns = [
     path('index-admin/', admin.site.urls),
-    path('admin/', views.index_admin, name='index-admin'),
+    path('admin/', views.index_admin, name='custom-index-admin'),
     path('', views.index, name='index'),
     
     path('usuarios/', include('usuarios.urls')),
     path('usuarios/api/', include('usuarios.api_urls')),
     path('servicios/', include('servicios.urls')),
     path('servicios/api/', include('servicios.api_urls')),
-    path('productos/', views.productos, name='productos'),
     path('productos/', include('productos.urls')),
     path('inicio/', views.inicio, name='inicio')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
