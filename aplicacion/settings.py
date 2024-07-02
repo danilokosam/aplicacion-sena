@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usuarios.apps.UsuariosConfig',
+    'servicios.apps.ServiciosConfig',
     'crispy_forms', # pip install django-crispy-forms
     'django_bootstrap_icons',# pip install django-bootstrap-icons
     'crispy_bootstrap5', # pip install crispy-bootstrap5
