@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path('admin-django/', admin.site.urls),
+    path('index-admin/', admin.site.urls),
     path('admin/', views.index_admin, name='index-admin'),
     path('', views.index, name='index'),
     
@@ -30,5 +30,6 @@ urlpatterns = [
     path('servicios/', include('servicios.urls')),
     path('servicios/api/', include('servicios.api_urls')),
     path('productos/', views.productos, name='productos'),
+    path('productos/', include('productos.urls')),
     path('inicio/', views.inicio, name='inicio')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

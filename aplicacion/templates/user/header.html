@@ -1,0 +1,74 @@
+{% load static %}
+{% block title %}header{% endblock title %}
+{% block contenido %}
+<header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark mx-5">
+        <img src="{% static 'img\Designer.jpeg' %}" alt="logo" width="50px" height="40px" />
+        <a class="navbar-brand pe-5" href="{%url 'index'%}">FERRETERÍA INDUSTRIAL WS</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-3 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'index' %}"
+                >INICIO</a
+              >
+              <!-- pendiente de cambiar el href -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">SERVICIOS</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link active dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >PRODUCTOS</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">TORNILLERÍA</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'productos'%}"
+                    >HERRAMIENTAS DE CONSTRUCCIÓN</a
+                  >
+                </li>
+
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >MATERIALES DE CONSTRUCCIÓN</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link active" href="#">CONTACTO</a>
+            </li>
+          </ul>
+          <div class="justify-content-md-end">
+            <a class="btn btn-nav" href="{% url 'inicio' %}" role="button"
+              >INICIAR SESIÓN</a
+            >
+            <a class="btn btn-nav" href="#" role="button">REGISTRARSE</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  {% endblock  %}

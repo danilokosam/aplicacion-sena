@@ -39,12 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usuarios.apps.UsuariosConfig',
+    'productos',
+    'django_bootstrap5',
     'servicios.apps.ServiciosConfig',
     'crispy_forms', # pip install django-crispy-forms
     'django_bootstrap_icons',# pip install django-bootstrap-icons
     'crispy_bootstrap5', # pip install crispy-bootstrap5
     'rest_framework',# pip install djangorestframework
-    'bootstrap5'
+    'django.contrib.humanize',
     # pip install Pillow
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS= "bootstrap5"
