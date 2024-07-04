@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+# from django.contrib.auth.views import LoginView
 from . import views
 
 urlpatterns = [
-    path('index-admin/', admin.site.urls),
-    path('admin/', views.index_admin, name='custom-index-admin'),
+    path('django-admnistracion/', admin.site.urls),
+    path('admin/', views.index_admin, name='index-admin'),
+    path('user/', views.index_user, name='index-user'), # <-- Pendiente de revision
     path('', views.index, name='index'),
     
     path('usuarios/', include('usuarios.urls')),
@@ -30,5 +32,8 @@ urlpatterns = [
     path('servicios/', include('servicios.urls')),
     path('servicios/api/', include('servicios.api_urls')),
     path('productos/', include('productos.urls')),
-    path('inicio/', views.inicio, name='inicio')
+    
+    path('login/', views.MyLoginView.as_view(), name='login'),
+    path('logout/', views.logout_user, name='logout'),
+    path('', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

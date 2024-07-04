@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <title>{% block titulo %}Ferreteria{% endblock %}</title>
   </head>
-  <header>
-    {% include 'user/header.html' %}
-  </header>
   <body>
+    <header>
+    {% include 'user/header.html' %}
+    </header>
+    <main>
     {% block contenido %}
     {% endblock %}
-  </body>
+    </main>
   <footer>
     {% include 'user/footer.html' %}
   </footer>
+</body>
 </html>

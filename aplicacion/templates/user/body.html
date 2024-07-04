@@ -1,0 +1,55 @@
+{% load django_bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{% static 'plugins/fontawesome-free/css/all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
+    {% bootstrap_css %} {% bootstrap_javascript %}
+    <!-- jQuery -->
+    <script src="{% static 'plugins\jquery\jquery.min.js' %}"></script>
+    <title>Ferreteria system</title>
+  </head>
+  <body
+    class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed"
+  >
+    <div class="wrapper">
+      {% include "layouts/partials/user/navbar.html" %}
+      {% include "layouts/partials/user/sidebar.html" %}
+
+      
+        {% block contenido %}{% endblock contenido %}
+
+      {% include "layouts/partials/user/footer.html" %}
+    </div>
+
+
+    <script src="{% static 'plugins\toastr\toastr.min.js' %}"></script>
+
+    {% if messages %}
+    {% for message in messages %}
+    <script>
+        // In your Javascript (external .js resource or <script> tag)
+        
+        toastr.{{ message.tags }}('{{ message|safe }}', '', {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-bottom-right'
+        });
+    </script>
+    {% endfor %}
+    {% endif %}
+  
+
+    {% block scripts %}{% endblock scripts %}
+  </body>
+</html>

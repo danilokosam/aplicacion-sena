@@ -1,131 +1,186 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* mulish-latin-wght-normal */
+@font-face {
+  font-family: 'Mulish Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/mulish:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
-body{
-    background-color:#262626;
-}
-header{
-    background-color:#262626;
-    
-}
-.nosotros{
-    font-family: Arial, Helvetica, sans-serif;
-}
-.nosotros p{
-    text-align: center;
-}
-.carrusel h2{
-    color:  #262626;
-    font-size:45px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color:#ffffff;
 
-    }
-.carrusel p{
-    color:#262626;
-    font-size:25px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color:beige
-    }
-.row h5{
-     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-     font-size: 20px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.card-body{
-    background-color:#262626;
-    color: #9a8a78;  
+body {
+  background-color: #0f0e0e;
 }
-.btn{
-    background-color:#aea293;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
-    color:black
-    
+
+header {
+  padding: 6px;
 }
-.btn:hover{
-    background-color:#72695f;
-    color:whitesmoke
-    
+
+.container {
+  margin-top: 10px;
 }
-.btn-nav{
-    margin: 5px 0 5px 0;
+
+.nosotros {
+  font-family: Arial, Helvetica, sans-serif;
 }
-.servicios img{
-    width: 100px;
-    height: 100px;
-    padding-right: 15px;
+.carousel-caption {
+    top: 230px;
 }
-.servicios h2{
-    text-align: center;
-    padding: 20px 0px 20px 0px;
-    color:#fff;
+
+.texto-servicios {
+  text-align: justify;
+  text-align-last: left; /* O puedes usar 'start' */
+  line-height: 25px; /* Ajuste del interlineado */
+  letter-spacing: -1px; /* Ajuste del interletraje */
+  padding: 15px;
 }
-.servicios h4, p{
-      color:#fff;
+
+.nosotros p {
+  text-align: center;
 }
-.card-body-1 h5{
-    color: #fff;
+
+.carrusel h2 {
+  font-family: 'Mulish Variable';
 }
-.servicios h4{
-    text-align: center;
+
+.carrusel p {
+  font-size: 25px;
+  font-family: 'Mulish Variable';
 }
-.dropdown-menu{
-    font-size: small;
+
+.row h5 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+  color: #d79629;
 }
-.catalogo{
-    color:  #9a8a78;
-    text-align: center;
+
+.card-body {
+  background-color: #262626;
+  color: #9a8a78;
 }
-.catalogo h5{
-    padding: 15px;
+
+.btn {
+  background-color: #f7f7f7;
+  font-weight: 700;
+  /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
+  color: black;
 }
-.catalogo img{
-    width: 350px;
-    height: 200px;
-    border-radius: 5%;
-    padding: 5px;
+
+.btn:hover {
+  background-color: #d79629;
+  color: white;
 }
-.contacto{
-      color:#fff;
+
+.btn-nav {
+  margin: 5px 0 5px 0;
 }
-.contacto h2{
-    text-align: center;
-    padding: 20px 0px 20px 0px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
-    color:#fff;
+
+.servicios img {
+  width: 100px;
+  height: 100px;
+  padding-right: 15px;
 }
-.inicio{
-   color:#fff;
+.servicios h2 {
+  text-align: center;
+  padding: 20px 0px 20px 0px;
 }
-.footer{
-    color: #9a8a78;  
-    text-align: center;
-    background-color: #131212;
-    border-radius: 2rem;
-    line-height: 35px;
+.servicios h4,
+p {
+  color: #fff;
 }
-.tornilleria, .herramientas, .materiales, .aseosria, .diseños, .catalogo, .numero, .correo {
-    color: #9a8a78;  
-    text-align: center;
-    font-size: 20px;
+.card-body-1 h5 {
+  color: #fff;
 }
-.formulario{
-    color:#9a8a78;
+.servicios h4 {
+  text-align: center;
 }
-.card{
-    color:#9a8a78;  
+.dropdown-menu {
+  font-size: small;
 }
-.description{
-    height: 25px;
-    overflow: hidden;
-    transition: height .3s ease-in .3s;
+.catalogo {
+  color: #9a8a78;
+  text-align: center;
 }
-.description:hover{
-    height: 80px;
+.catalogo h5 {
+  padding: 15px;
 }
-#pills-home-tab,#pills-profile-tab,#pills-contact-tab{
-    background-color:#aea293;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
-    color:black 
+.catalogo img {
+  width: 350px;
+  height: 200px;
+  border-radius: 5%;
+  padding: 5px;
+}
+.contacto {
+  color: #fff;
+}
+
+.ani{
+  background: linear-gradient(to right,#c38d2e 20%, #eedd99 40%, #d9a749 60%, #c38d2e 80%);
+  background-size: 200%;
+  color: transparent;
+  background-clip: text;
+  animation: shine 5s linear infinite;
+  user-select: none;
+  cursor: default;
+}
+
+.contacto h2 {
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #fff;
+}
+.inicio {
+  color: #fff;
+}
+.footer {
+  color: #9a8a78;
+  text-align: center;
+  background-color: #131212;
+  border-radius: 2rem;
+  line-height: 35px;
+}
+.tornilleria,
+.herramientas,
+.materiales,
+.aseosria,
+.diseños,
+.catalogo,
+.numero,
+.correo {
+  color: #9a8a78;
+  text-align: center;
+  font-size: 20px;
+}
+.formulario {
+  color: #9a8a78;
+}
+.card {
+  color: #9a8a78;
+}
+.description {
+  height: 25px;
+  overflow: hidden;
+  transition: height 0.3s ease-in 0.3s;
+}
+.description:hover {
+  height: 80px;
+}
+#pills-home-tab,
+#pills-profile-tab,
+#pills-contact-tab {
+  background-color: #aea293;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: black;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
