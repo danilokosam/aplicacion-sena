@@ -27,33 +27,10 @@
               <!-- pendiente de cambiar el href -->
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">SERVICIOS</a>
+              <a class="nav-link active" href="{% url 'servicios user'%}">SERVICIOS</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link active dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                >PRODUCTOS</a
-              >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">TORNILLERÍA</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="{% url 'productos'%}"
-                    >HERRAMIENTAS DE CONSTRUCCIÓN</a
-                  >
-                </li>
-
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >MATERIALES DE CONSTRUCCIÓN</a
-                  >
-                </li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link active"  href="{% url 'productos'%}">PRODUCTOS</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link active" href="#">CONTACTO</a>

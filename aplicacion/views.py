@@ -38,3 +38,6 @@ class MyLoginView(LoginView):
     
     def get_success_url(self):
         return reverse_lazy('index-admin')
+
+def serviciosuser(request):
+    return render(request, 'servicios-user.html', {})

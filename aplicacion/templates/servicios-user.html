@@ -1,0 +1,82 @@
+{% extends "./user/base.html" %}
+{% load static %}
+{% block titulo %}SERVICIOS{% endblock titulo %}
+{% block contenido %}
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center text-light mb-4">SERVICIOS</h2>
+        <div class="row">
+            <div class="col-md-5 mx-md-1 mb-4">
+                <div class="position-relative">
+                    <img src="{% static 'img/construcción1.jpg' %}" class="img-fluid" alt="Imagen 1">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-2 bg-dark bg-opacity-50 text-white text-center fs-5">
+                        Realizamos decoraciones de interior y acabados con materiales de la mejor calidad.
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary">Contáctanos</button>
+                </div>
+            </div>
+            <div class="col-md-5 mx-md-1 mb-4">
+                <div class="position-relative">
+                    <img src="{% static 'img/construcción2.jpg' %}" class="img-fluid" alt="Imagen 2">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-2 bg-dark bg-opacity-50 text-white text-center fs-5">
+                        Remodelamos tus espacios desde 0, para que sea el lugar que estas soñando.
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary">Contáctanos</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mx-md-1 mb-4">
+                <div class="position-relative">
+                    <img src="{% static 'img/construcción3.jpg' %}" class="img-fluid" alt="Imagen 3">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-2 bg-dark bg-opacity-50 text-white text-center fs-5">
+                        Realizamos mantenimiento y arreglos a domicilio.
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary">Contáctanos</button>
+                </div>
+            </div>
+            <div class="col-md-5 mx-md-1 mb-4">
+                <div class="position-relative">
+                    <img src="{% static 'img/construcción4.jpg' %}" class="img-fluid" alt="Imagen 4">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-2 bg-dark bg-opacity-50 text-white text-center fs-5">
+                        Contamos con técnicos para tu mantenimiento eléctrico. 
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary">Contáctanos</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mx-md-1 mb-4">
+                <div class="position-relative">
+                    <img src="{% static 'img/construcción5.jpg' %}" class="img-fluid" alt="Imagen 5">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-2 bg-dark bg-opacity-50 text-white text-center fs-5">
+                        Realizamos perforaciones en todo tipo de material.
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary">Contáctanos</button>
+                </div>
+            </div>
+            <div class="col-md-5 mx-md-1 mb-4">
+                <div class="position-relative">
+                    <img src="{% static 'img/construcción6.jpg' %}" class="img-fluid" alt="Imagen 6">
+                    <div class="position-absolute bottom-0 start-0 w-100 p-2 bg-dark bg-opacity-50 text-white text-center fs-5">
+                        Elaboramos planos y diseños que estan a la vanguardia.
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-primary">Contáctanos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

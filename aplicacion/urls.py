@@ -36,4 +36,6 @@ urlpatterns = [
     path('login/', views.MyLoginView.as_view(), name='login'),
     path('logout/', views.logout_user, name='logout'),
     path('', include('django.contrib.auth.urls')),
+    path('inicio/', views.inicio, name='inicio'),
+    path('serviciosuser/', views.serviciosuser, name='servicios user'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
