@@ -7,6 +7,8 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.contrib import messages
 
+from servicios.models import Servicio
+
 @login_required
 def index_admin(request):
     titulo = "Inicio"
@@ -40,4 +42,8 @@ class MyLoginView(LoginView):
         return reverse_lazy('index-admin')
 
 def serviciosuser(request):
-    return render(request, 'servicios-user.html', {})
+    servicios=Servicio.objects.all()
+    context={
+        'servicios':servicios
+    }
+    return render(request, 'servicios-user.html', context)
