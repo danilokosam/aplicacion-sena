@@ -18,13 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-# from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView,PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from . import views
 
 urlpatterns = [
     path('django-admnistracion/', admin.site.urls),
     path('admin/', views.index_admin, name='index-admin'),
-    path('user/', views.index_user, name='index-user'), # <-- Pendiente de revision
+    #path('user/', views.index_user, name='index-user'), # <-- Pendiente de revision
     path('', views.index, name='index'),
     
     path('usuarios/', include('usuarios.urls')),
@@ -32,6 +32,11 @@ urlpatterns = [
     path('servicios/', include('servicios.urls')),
     path('servicios/api/', include('servicios.api_urls')),
     path('productos/', include('productos.urls')),
+    
+    path('reiniciar/',PasswordResetView.as_view(),name='pass_reset'),
+    path('reiniciar/enviar',PasswordResetDoneView.as_view(),name='pass_reset_done'),
+    path('reiniciar/<uid64>/<token>',PasswordResetConfirmView.as_view(),name='pass_reset_confirm'),
+    path('reiniciar/completo',PasswordResetCompleteView.as_view(),name='pass_reset_reset_complete'),
     
     path('login/', views.MyLoginView.as_view(), name='login'),
     path('logout/', views.logout_user, name='logout'),

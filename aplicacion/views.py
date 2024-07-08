@@ -17,12 +17,12 @@ def index_admin(request):
     }
     return render(request, 'index-admin.html', contexto)
 
-def index_user(request):
-    titulo = "Inicio"
-    contexto = {
-        'titulo': titulo
-    }
-    return render(request, 'users/index-user.html', contexto)
+# def index_user(request):
+#     titulo = "Inicio"
+#     contexto = {
+#         'titulo': titulo
+#     }
+#     return render(request, 'users/index-user.html', contexto)
 
 def productos(request):
     return render(request, 'productos.html', {})

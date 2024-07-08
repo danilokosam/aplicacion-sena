@@ -1,3 +1,4 @@
+{% extends "user/base.html" %}
 {% load django_bootstrap5 %}
 {% load static %}
 <!DOCTYPE html>
@@ -23,13 +24,13 @@
     class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed"
   >
     <div class="wrapper">
-      {% include "layouts/partials/user/navbar.html" %}
-      {% include "layouts/partials/user/sidebar.html" %}
-
+      {% comment %} {% include "layouts/partials/user/navbar.html" %}
+      {% include "layouts/partials/user/sidebar.html" %} {% endcomment %}
+      {% include "user/header.html" %}
       
         {% block contenido %}{% endblock contenido %}
 
-      {% include "layouts/partials/user/footer.html" %}
+      {% comment %} {% include "layouts/partials/user/footer.html" %} {% endcomment %}
     </div>
 
 
