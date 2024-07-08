@@ -121,10 +121,11 @@
       {% for servicio in servicios %}
       <div class="col-md-5 mx-md-1 mb-4">
         <div class="position-relative">
-          <img
-            src="{% static 'img/construcción5.jpg' %}"
+            <img
+            src="{{servicio.imagen.url}}"
             class="img-fluid"
-            alt="Imagen 5"
+            alt="Imagen"
+            
           />
           <div
             class="position-absolute bottom-0 start-0 w-100 p-2 bg-dark bg-opacity-50 text-white text-center fs-5"

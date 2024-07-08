@@ -1,11 +1,11 @@
 from django.db import models
-
 from usuarios.models import Usuario
 
 # Create your models here.
 class Servicio(models.Model):
     nombre = models.CharField(max_length=45, verbose_name="Nombre")
     descripcion = models.CharField(max_length=200,verbose_name="Descripción")
+    imagen = models.ImageField(upload_to='servicios', blank=True, null=True)
     estado = models.BooleanField(default=True)
 
     def __str__(self):
