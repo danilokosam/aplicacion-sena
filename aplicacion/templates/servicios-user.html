@@ -116,31 +116,25 @@
       </div>
     </div>
     {% endcomment %}
-
-    <div class="row">
+    <div class="row justify-content-center">
       {% for servicio in servicios %}
-      <div class="col-md-5 mx-md-1 mb-4">
-        <div class="position-relative">
+      <div class="col-md-5 mx-md-1 mb-4 d-flex flex-column align-items-center">
+        <div class="position-relative w-100">
             <img
-            src="{{servicio.imagen.url}}"
+            src="{{ servicio.imagen.url }}"
             class="img-fluid"
             alt="Imagen"
-            
           />
-          <div
-            class="position-absolute bottom-0 start-0 w-100 p-2 bg-dark bg-opacity-50 text-white text-center fs-5"
-          >
-            {{servicio.descripcion}}
+          <div class="position-absolute bottom-0 start-0 w-100 p-2 bg-dark bg-opacity-50 text-white text-center fs-5">
+            <h3>{{ servicio.nombre }}</h3>
+            {{ servicio.descripcion }}
           </div>
         </div>
         <div class="text-center mt-2">
-          <a href="{% url 'index-user' %}" class="btn btn-primary"
-            >Contáctanos</a
-          >
+          <a href="{% url 'servicios-user' %}" class="btn btn-primary w-100">Contáctanos</a>
         </div>
       </div>
       {% endfor %}
     </div>
-  </div>
-</body>
+</div>
 {% endblock %}

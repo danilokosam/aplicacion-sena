@@ -5,3 +5,4 @@ from servicios.models import *
 admin.site.register(Servicio)
 admin.site.register(Compra)
 admin.site.register(DetalleCompra)
+admin.site.register(Contacto)

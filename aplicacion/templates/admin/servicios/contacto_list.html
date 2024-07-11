@@ -1,0 +1,55 @@
+{% extends 'layouts/partials/admin/body.html' %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+<div class="container">
+    <h1 class="my-4">Lista de Contactos</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped" id="contactos-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Tipo de Consulta</th>
+                        <th scope="col">Mensaje</th>
+                        <th scope="col">Aviso</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contacto in contactos %}
+                    <tr>
+                        <td>{{ contacto.nombre }}</td>
+                        <td>{{ contacto.correo }}</td>
+                        <td>{{ contacto.telefono }}</td>
+                        <td>{{ contacto.get_tipo_consulta_display }}</td>
+                        <td>{{ contacto.mensaje }}</td>
+                        <td>{{ contacto.aviso|yesno:"Sí,No" }}</td>
+                        <td>
+                            <form action="{% url 'contacto-eliminar' contacto.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $('#contactos-table').DataTable({
+            responsive: true,
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print', 'colvis'],
+            layout: {
+                topStart: 'buttons'
+            }
+        });
+    });
+</script>
+{% endblock %}

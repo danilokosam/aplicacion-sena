@@ -25,3 +25,23 @@ class DetalleCompra(models.Model):
     
     def __str__(self):
         return "Detalle de compra # " + str(self.compra.id) + " para el servicio " + str(self.servicio.nombre)
+    
+opciones_consulta = [
+    [0, "consulta"],
+    [1, "reclamo"],
+    [2, "servicio"],
+    [3, "felicitaciones"],
+    [4, "otro"]
+]
+
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=50)
+    correo = models.EmailField()
+    telefono = models.CharField(max_length=12)
+    tipo_consulta = models.IntegerField(choices=opciones_consulta)
+    mensaje = models.TextField()
+    aviso = models.BooleanField()
+
+    def __str__(self):
+        return self.nombre
+       

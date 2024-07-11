@@ -7,7 +7,7 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.contrib import messages
 
-from servicios.models import Servicio
+from servicios.models import Contacto, Servicio
 
 @login_required
 def index_admin(request):
@@ -47,3 +47,11 @@ def serviciosuser(request):
         'servicios':servicios
     }
     return render(request, 'servicios-user.html', context)
+
+def contacto_list_view(request):
+    contactos = Contacto.objects.all()
+    context = {
+        'contactos': contactos,
+    }
+    return render(request, 'admin\servicios\contacto_list.html', context)
+
