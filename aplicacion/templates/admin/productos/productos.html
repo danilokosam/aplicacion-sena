@@ -1,0 +1,91 @@
+{% extends '../../layouts/partials/admin/body.html' %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+  <div class="container">
+    <h1 class="my-4">Lista de Productos</h1>
+    <div class="row">
+      <div class="rounded card p-3 col-md-3">
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <input class="btn btn-success" type="submit" value="Agregar" />
+          {% include '../../layouts/partials/admin/modal/modal-eliminar-productos.html' %}
+        </form>
+      </div>
+      <div class="col-md-8 ms-4">
+        <table class="table table-striped" id="productos-table">
+          <thead>
+            <tr>
+              <th scope="col">Imagen</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="productos-table-body">
+            <!-- Los datos de los productos se insertarán aquí -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block scripts %}
+<script>console.log("hola")</script> <!-- RECORDAR QUITAR-->
+  <script>
+    $(document).ready(function () {
+      if ($('#confirmEliminar').length) {
+        console.log('#confirmEliminar exists')
+      } else {
+        console.log('#confirmEliminar does not exist')
+      }
+      // Cargar datos de productos
+      $.ajax({
+        url: '/productos/api/listaProductos/',
+        method: 'GET',
+        success: function (data) {
+          var productosTableBody = $('#productos-table-body')
+          data.forEach(function (producto) {
+            if(producto.estado){
+            var imagen = '<img src="' + producto.imagen + '" alt="' + producto.nombre + '" width="50">'
+            var editButton = '<a href="/productos/productos/' + producto.id + '/" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pencil-alt"></i></a>'
+            var deleteButton = '<button type="button" class="btn btn-danger" id="btnEliminar" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-titulo="Producto" data-bs-nombre="' + producto.nombre + '" data-bs-url="/productos/productos/eliminar/' + producto.id + '/">              <i class="fas fa-trash-alt"></i>            </button>'
+    
+            productosTableBody.append('<tr>' + '<td>' + imagen + '</td>' + '<td>' + producto.nombre + '</td>' + '<td>' + producto.precio + '</td>' + '<td>' + producto.marca + '</td>' + '<td>' + producto.descripcion + '</td>' + '<td id="contenedorBotones">' + editButton + ' ' + deleteButton + '</td>' + '</tr>')
+          }
+          })
+          $('#productos-table').DataTable({
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print', 'colvis'],
+            layout: {
+              topStart: 'buttons'
+            },
+            responsive: true,
+            scroller: true
+          })
+        },
+        error: function () {
+          alert('Error al cargar los datos de los productos.')
+        }
+        
+      });
+      $("body").on('click', '#btnEliminar', function(event) {
+      // Obtener el valor de data-bs-url del botón
+      var urlEliminar = $(this).data('bs-url');
+      var producto= $(this).data('bs-nombre');
+     // Modificar el atributo href del enlace dentro del modal
+     $('#confirmEliminar').attr('href', urlEliminar);
+     $('#productoNombre').text(producto);
+    event.preventDefault();
+        
+      });
+    })
+  </script>
+  <script>
+    
+    $(document).ready(function() {
+      
+    });
+  </script>
+{% endblock %}

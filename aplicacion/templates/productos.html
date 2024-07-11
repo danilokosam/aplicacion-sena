@@ -63,4 +63,40 @@
       </div>
     </div>
   </section>
+  <script>
+    function fetchProducts() {
+      $.ajax({
+        url: '/productos/api/listaProductos/', // Asegúrate de que esta URL es correcta
+        method: 'GET',
+        success: function(data) {
+          var productosContainer = $('.row-cols-xl-4');
+          productosContainer.empty(); // Limpia el contenedor antes de agregar nuevos productos
+          data.forEach(function(producto) {
+            productosContainer.append(
+              '<div class="col d-flex justify-content-center mb-4">' +
+                '<div class="card shadow mb-1 bg-dark rounded" style="width: 15rem">' +
+                  '<h5 class="card-title pt-2 text-center">' + producto.nombre + '</h5>' +
+                  '<img src="' + producto.imagen + '" class="card-img-top" alt="' + producto.nombre + '" style="height: 200px" />' +
+                  '<div class="card-body" style="width 100%">' +
+                    '<p class="card-text description fs-6 ">' + producto.descripcion + '</p>' +
+                    '<h5 class="precio text-center">Precio: <span>$' + producto.precio + '</span></h5>' +
+                    '<div class="d-grid gap-2">' +
+                      '<button class="btn btn-primary" type="button">Añadir al carrito</button>' +
+                    '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>'
+            );
+          });
+        }
+      });
+    }
+  
+    // Llamar a fetchProducts al cargar la página y luego cada 30 segundos
+    $(document).ready(function() {
+      fetchProducts();
+      setInterval(fetchProducts, 3000); // Actualiza los productos cada 30 segundos
+    });
+  </script>
+  
 {% endblock %}

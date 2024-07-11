@@ -32,6 +32,8 @@ urlpatterns = [
     path('servicios/', include('servicios.urls')),
     path('servicios/api/', include('servicios.api_urls')),
     path('productos/', include('productos.urls')),
+    path('productos/api/', include('productos.api_urls')),
+    # path('tipos-productos/api', include('productos.urls')),
     
     path('reiniciar/',PasswordResetView.as_view(),name='pass_reset'),
     path('reiniciar/enviar',PasswordResetDoneView.as_view(),name='pass_reset_done'),
