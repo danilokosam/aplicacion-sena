@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -19,13 +20,19 @@ def servicio_list(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['DELETE'])
+@api_view(['DELETE', 'GET'])
 def servicio_detail(request, id):
     try:
-        servicio = Servicio.objects.delete(id=id)
+        servicio = Servicio.objects.get(id=id)
     except Servicio.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
-
-    if request.method == 'DELETE':
+    
+    if request.method == 'GET':
         serializer = ServicioSerializer(servicio)
         return Response(serializer.data)
+
+    if request.method == 'DELETE':
+        servicio.delete()
+        return redirect('servicios-listar')
+    
+    

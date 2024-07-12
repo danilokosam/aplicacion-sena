@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.db.utils import IntegrityError  # Importa IntegrityError
+from django.db.utils import IntegrityError
 from .models import Usuario
 from datetime import date
 
@@ -26,11 +26,11 @@ class UsuarioModelTest(TestCase):
         self.assertEqual(str(Usuario._meta.verbose_name_plural), "Usuarios")
 
     def test_full_name_property(self):
-        self.assertEqual(self.usuario.full_name, "Juan Perez")  # Sin paréntesis
+        self.assertEqual(self.usuario.full_name, "Juan Perez")
         self.usuario.segundo_nombre = "Carlos"
         self.usuario.segundo_apellido = "Gomez"
         self.usuario.save()
-        self.assertEqual(self.usuario.full_name, "Juan Carlos Perez Gomez")  # Sin paréntesis
+        self.assertEqual(self.usuario.full_name, "Juan Carlos Perez Gomez")
 
     def test_clean_method(self):
         self.usuario.primer_nombre = "juan"
@@ -44,13 +44,13 @@ class UsuarioModelTest(TestCase):
         self.assertFalse(self.usuario.usuario_activo().exists())
 
     def test_unique_documento(self):
-        with self.assertRaises(IntegrityError):  # Captura IntegrityError en lugar de ValidationError
+        with self.assertRaises(IntegrityError):
             Usuario.objects.create(
                 primer_nombre="Maria",
                 primer_apellido="Lopez",
                 fecha_nacimiento=date(1995, 5, 5),
                 tipo_documento="CC",
-                documento=1234567890,  # Mismo documento que el primer usuario
+                documento=1234567890,
                 user=User.objects.create_user(username='testuser2', password='12345')
             )
 
@@ -74,5 +74,5 @@ class UsuarioModelTest(TestCase):
                 fecha_nacimiento=date(2000, 1, 1),
                 tipo_documento="TI",
                 documento=9876543210,
-                user=User(username='testuser')  # Este nombre de usuario ya existe
+                user=User(username='testuser')
             ).clean()

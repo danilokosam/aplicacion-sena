@@ -43,6 +43,8 @@ class MyLoginView(LoginView):
 
 def serviciosuser(request):
     servicios=Servicio.objects.all()
+    print('------------------------------------')
+    print(servicios)
     context={
         'servicios':servicios
     }
