@@ -1,11 +1,16 @@
 from django.db import models
 from usuarios.models import Usuario
 
+def get_image_filename(instance, filename):
+    ext = filename.split(".")[-1]
+    filename = f"{instance.nombre}.{ext}"
+    return f"servicios/servicios/{filename}"
+
 # Create your models here.
 class Servicio(models.Model):
     nombre = models.CharField(max_length=45, verbose_name="Nombre")
     descripcion = models.CharField(max_length=200,verbose_name="Descripción")
-    imagen = models.ImageField(upload_to='servicios', blank=True, null=True)
+    imagen = models.ImageField(upload_to=get_image_filename, blank=True, null=True)
     estado = models.BooleanField(default=True)
 
     def __str__(self):

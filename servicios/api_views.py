@@ -17,3 +17,15 @@ def servicio_list(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['DELETE'])
+def servicio_detail(request, id):
+    try:
+        servicio = Servicio.objects.delete(id=id)
+    except Servicio.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'DELETE':
+        serializer = ServicioSerializer(servicio)
+        return Response(serializer.data)

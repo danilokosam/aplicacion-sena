@@ -41,11 +41,10 @@ class Usuario(models.Model):
 
     @property
     def full_name(self):
-        if self.segundo_nombre:
-            return f"{self.primer_nombre} {self.segundo_nombre} {self.primer_apellido} {self.segundo_apellido}"
-        return f"{self.primer_nombre} {self.primer_apellido} {self.segundo_apellido}"
+        names = [self.primer_nombre, self.segundo_nombre, self.primer_apellido, self.segundo_apellido]
+        return ' '.join(filter(None, names))
 
     def usuario_activo(self):
         if self.estado:
-            return Usuario.objects.filter(usuario=self, estado=True)
+            return Usuario.objects.filter(pk=self.pk, estado=True)
         return Usuario.objects.none()

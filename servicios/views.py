@@ -34,7 +34,7 @@ def servicio_list_view(request, id=None):
             messages.error(request, f'¡Error al editar servicio!')
 
     elif request.method == 'POST':
-        form = ServicioForm(request.POST)
+        form = ServicioForm(request.POST, request.FILES)
         if form.is_valid():
                 form.save()
                 messages.success(
@@ -60,6 +60,8 @@ def servicio_list_view(request, id=None):
 def servicio_delete_view(request, id):
     servicio = Servicio.objects.filter(id=id)
     servicio.update(estado=False)
+    messages.success(
+        request, f'¡El servicio se elimino de forma exitosa!')
     return redirect('servicios-listar')
 
 def contacto(request):
