@@ -34,8 +34,47 @@
 {% endblock %}
 {% block scripts %}
   <script>
+    // Cargar datos de productos
+    $.ajax({
+      url: '/productos/api/listaProductos/',
+      method: 'GET',
+      success: function (data) {
+        var productosTableBody = $('#productos-table-body')
+        data.forEach(function (producto) {
+          if(producto.estado){
+          var imagen = '<img src="' + producto.imagen + '" alt="' + producto.nombre + '" width="50">'
+          var editButton = '<a href="/productos/productos/' + producto.id + '/" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pencil-alt"></i></a>'
+          var deleteButton = '<button type="button" class="btn btn-danger" id="btnEliminar" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-titulo="Producto" data-bs-nombre="' + producto.nombre + '" data-bs-url="/productos/productos/eliminar/' + producto.id + '/">              <i class="fas fa-trash-alt"></i>            </button>'
+
+          productosTableBody.append('<tr>' + '<td>' + imagen + '</td>' + '<td>' + producto.nombre + '</td>' + '<td>' + producto.precio + '</td>' + '<td>' + producto.marca + '</td>' + '<td>' + producto.descripcion + '</td>' + '<td id="contenedorBotones">' + editButton + ' ' + deleteButton + '</td>' + '</tr>')
+        }
+        })
+        $('#productos-table').DataTable({
+          buttons: ['copy', 'csv', 'excel', 'pdf', 'print', 'colvis'],
+          layout: {
+            topStart: 'buttons'
+          },
+          responsive: true,
+          scroller: true
+        })
+      },
+      error: function () {
+        alert('Error al cargar los datos de los productos.')
+      }
+
+    });
+    $("body").on('click', '#btnEliminar', function(event) {
+    // Obtener el valor de data-bs-url del botón
+    var urlEliminar = $(this).data('bs-url');
+    var producto= $(this).data('bs-nombre');
+   // Modificar el atributo href del enlace dentro del modal
+   $('#confirmEliminar').attr('href', urlEliminar);
+   $('#productoNombre').text(producto);
+  event.preventDefault();
+
+    });
     // Función para obtener el token CSRF de la cookie
-    function getCookie(name) {
+    {% comment %} function getCookie(name) {
       let cookieValue = null;
       if (document.cookie && document.cookie !== '') {
         const cookies = document.cookie.split(';');
@@ -124,7 +163,7 @@
       });
       
       
-    });
+    }); {% endcomment %}
   </script>
   <script>
     $(document).ready(function() {
