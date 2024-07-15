@@ -50,7 +50,7 @@
             if(servicio.estado){
             var imagen = '<img src="' + servicio.imagen + '" alt="' + servicio.nombre + '" width="50">'
             var editButton = '<a href="/servicios/servicio/' + servicio.id + '/" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pencil-alt"></i></a>'
-            var deleteButton = '<button type="button" class="btn btn-danger" id="btnEliminar" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-titulo="Usuario" data-bs-nombre="' + servicio.nombre + '" data-bs-url="/servicios/api/servicios/' + servicio.id + '/">              <i class="fas fa-trash-alt"></i>            </button>'
+            var deleteButton = '<button type="button" class="btn btn-danger" id="btnEliminar" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-bs-titulo="Usuario" data-bs-nombre="' + servicio.nombre + '" data-bs-url="/servicios/servicio/eliminar/' + servicio.id + '/">              <i class="fas fa-trash-alt"></i>            </button>'
     
             serviciosTableBody.append('<tr>' + '<td>' + imagen + '</td>' + '<td>' + servicio.nombre + '</td>' + '<td>' + servicio.descripcion + '</td>' + '<td id="contenedorBotones">' + editButton + ' ' + deleteButton + '</td>' + '</tr>')
           }
@@ -61,6 +61,26 @@
               topStart: 'buttons'
             },
             responsive: true,
+            "language": {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando START a END de TOTAL Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de MAX total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar MENU Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+            },
             scroller: true
           })
         },
