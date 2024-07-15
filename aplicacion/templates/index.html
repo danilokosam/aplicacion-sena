@@ -99,7 +99,7 @@
                   Contamos con las mejores herramientas para las diferentes
                   actividades que impliquen mejorar las condiciones del lugar.
                 </p>
-                <a href="#" class="btn btn-1">Conoce más</a>
+                <a href="{% url 'lista-productos' %}" class="btn btn-1">Conoce más</a>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
                   Si buscas economía en los artículos que necesites a la hora de
                   crear o remodelar, este es el mejor lugar para buscar.
                 </p>
-                <a href="#" class="btn btn-2">Conoce más</a>
+                <a href="{% url 'lista-productos' %}" class="btn btn-2">Conoce más</a>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@
                   Encuentra las herramientas experimentadas y fáciles de usar en
                   las diferentes situaciones para mejorar tu entorno.
                 </p>
-                <a href="#" class="btn btn-3">Conoce más</a>
+                <a href="{% url 'lista-productos' %}" class="btn btn-3">Conoce más</a>
               </div>
             </div>
           </div>
@@ -221,7 +221,8 @@
       </div>
     </section>
     <section class="container contacto">
-      <h2>TE CONTACTAREMOS</h2>
+      <h2>TE CONTÁCTAREMOS</h2>
+       {% comment %}
       <form action="">
         <div class="row g-3">
           <div class="col-md-6">
@@ -269,9 +270,10 @@
             <label class="form-check-label" for="exampleCheck1"
               >Terminos y Condiciones</label
             >
+              {% endcomment %}
           </div>
           <div class="col-6">
-            <button type="submit" class="btn">CONTACTAME</button>
+            <a type="submit" href="{% url 'contacto' %}" class="btn">CONTÁCTAME</a>
           </div>
         </div>
       </form>
